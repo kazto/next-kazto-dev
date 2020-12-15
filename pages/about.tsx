@@ -35,6 +35,8 @@ const AboutPage = () => (
         <a>return home</a>
       </Link>
     </p>
+
+    <span>Photo by <a href="https://unsplash.com/@ielix?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Elia Clerici</a> on <a href="https://unsplash.com/@kazto/likes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
   </Layout>
 )
 

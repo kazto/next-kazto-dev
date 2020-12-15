@@ -1,0 +1,24 @@
+body {
+    background-image: 
+        url('../assets/images/ore-gray-1600.png'),
+        url('../assets/images/elia-clerici-XIrIWKCQykg-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 150vh;
+    min-height: 50vh;
+}
+img.logo {
+    width: 600px;
+}
+@media (max-width: 576px) {
+    body {
+        background-size: 100vh;
+        background-position: right top;
+    }
+    #app {
+        margin-top: 20px;
+    }
+    img.logo {
+        width: 100%;
+    }
+}
