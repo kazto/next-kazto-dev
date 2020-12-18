@@ -2,21 +2,33 @@ body {
     background-image: 
         url('../assets/images/ore-gray-1600.png'),
         url('../assets/images/elia-clerici-XIrIWKCQykg-unsplash.jpg');
-    background-repeat: no-repeat;
+    background-repeat: no-repeat, repeat;
     background-attachment: fixed;
-    background-size: 150vh;
+    background-size: 150vh, 100%;
     min-height: 50vh;
 }
-img.logo {
-    width: 600px;
+
+ul.topul {
+    list-style: none;
+    margin: 10px;
+    text-align: center;
+    li {
+        display: inline;
+        margin: 10px;
+    }
 }
+
+@media only screen and (orientation: portrait) {
+    body {
+        background-size: 150vh, cover;
+        background-position: right top, right bottom;
+    }
+}
+
 @media (max-width: 576px) {
     body {
-        background-size: 100vh;
+        background-size: 100vh, cover;
         background-position: right top;
-    }
-    #app {
-        margin-top: 20px;
     }
     img.logo {
         width: 100%;
