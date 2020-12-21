@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 const IndexPage = () => (
   <Layout title="kazto.dev">
-    <div style={{position: "relative", width: '600px', margin: '100px auto', padding: '100'}}>
+    <div style={{position: "relative", width: '720px', margin: '50px auto'}}>
       <Image
       src="/kazto_dev_logo.png"
       alt="kazto.dev"
-      width={1083}
-      height={480}
+      width={720}
+      height={323}
       />
     </div>
     <div style={{margin: '100px auto', padding: '100'}}>
