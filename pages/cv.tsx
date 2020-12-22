@@ -1,26 +1,26 @@
 import CvTable from '../components/CvTable'
 
-const CarricurumVitaePage = ({ data }) => {
+const CurriculumVitaePage = ({ data }) => {
+    let i;
     const contents = [
-        {"key": "speciality", "value": "特徴"},
-        {"key": "skill", "value": "技術"},
-        {"key": "self_recommend", "value": "自己分析"},
-        {"key": "region_of_interest", "value": "興味分野"},
+        {"ckey": "speciality", "value": "特徴"},
+        {"ckey": "skill", "value": "技術"},
+        {"ckey": "self_recommend", "value": "自己分析"},
+        {"ckey": "region_of_interest", "value": "興味分野"},
     ]
-    var listBase = []
+    let listBase = [];
 
-    for (var i in contents){
+    for (i in contents){
         listBase.push(
         <div className="divtable">
             <div className="divtabletitle">{contents[i].value}</div>
-            <div className="divtablebody">{data[contents[i].key]}</div>
+            <div className="divtablebody">{data[contents[i].ckey]}</div>
         </div>
         )
     }
 
-    var listCV = []
-    for(var i in data.carriculum_vitae) {
-        console.log(i)
+    let listCV = [];
+    for(i in data.carriculum_vitae) {
         listCV.push(
             <div className="divcvtable">
                 <div className="divcvtablerow">
@@ -69,4 +69,4 @@ export async function getStaticProps() {
     }
 }
 
-export default CarricurumVitaePage
+export default CurriculumVitaePage

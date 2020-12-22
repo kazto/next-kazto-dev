@@ -24,12 +24,39 @@ h1.cvtitle {
 }
 
 div.divbox {
+    div.divcvtable {
+        width: 170mm;
+
+        dic.divcvtablerow {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            margin: 1px;
+            width: 170mm;
+            margin-left: 20mm;
+            display: table;
+            align-items: center;
+        }
+        div.divtablecvtitle {
+            margin: 0;
+            padding: 1em;
+            border-right-style: solid;
+            border-color: black;
+            border-width: 1px;
+            width: 15%;
+            display: table-cell;
+        }
+
+        div.divtablecvbody {
+            display: table-cell;
+            padding: 1em;
+        }
+    }
     div.divtable {
         border-style: solid;
         border-color: black;
         border-width: 1px;
         width: 170mm;
-        margin-left: 20mm;
         display: flex;
         align-items: center;
 
