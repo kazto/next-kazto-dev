@@ -18,6 +18,45 @@ ul.topul {
     }
 }
 
+h1.cvtitle {
+    letter-spacing: 2em;
+    text-align: center;
+}
+
+div.divbox {
+    div.divtable {
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        width: 170mm;
+        margin-left: 20mm;
+        display: flex;
+        align-items: center;
+
+        div.divtabletitle {
+            margin: 0;
+            padding: 1em;
+            border-right-style: solid;
+            border-color: black;
+            border-width: 1px;
+            width: 15%;
+            display: block;
+            word-wrap: normal;
+            flex-basis: 5%;
+            flex-grow: 1;
+        }
+
+        div.divtablebody {
+            display: block;
+            padding: 1em;
+            width: 85%;
+            flex-basis: 5%;
+            flex-grow: 19;
+        }
+    }
+}
+
+
 @media only screen and (orientation: portrait) {
     body {
         background-size: 150vh, cover;
