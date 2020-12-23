@@ -3,6 +3,8 @@ body {
         url('../assets/images/ore-gray-1600.png'),
         url('../assets/images/elia-clerici-XIrIWKCQykg-unsplash.jpg');
     background-repeat: no-repeat, repeat;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode:normal, lighten;
     background-attachment: fixed;
     background-size: 150vh, 100%;
     min-height: 50vh;
@@ -23,28 +25,50 @@ h1.cvtitle {
     text-align: center;
 }
 
-div.divbox {
-    div.divcvtable {
-        width: 170mm;
+@mixin tablerow {
+    border-style: solid;
+    border-color: black;
+    border-width: 0 1px 1px 1px;
+    width: 190mm;
+    align-items: center;
+    &:first-child {
+        border-top-width: 1px;
+    }
+}
 
-        dic.divcvtablerow {
-            border-style: solid;
-            border-color: black;
-            border-width: 1px;
-            margin: 1px;
-            width: 170mm;
-            margin-left: 20mm;
+@mixin tabletitle {
+    border-style: solid;
+    border-color: black;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    width: 15%;
+    padding: 1em;
+
+    word-wrap: normal;
+}
+
+div.divbox {
+    font-size: 0.75em;
+
+    div.divcvtable {
+        width: 190mm;
+        margin-bottom: 4px;
+
+        div.divcvtablerow {
+            @include tablerow;
             display: table;
-            align-items: center;
+            &:first-child {
+                border-top-width: 1px;
+            }
         }
         div.divtablecvtitle {
-            margin: 0;
-            padding: 1em;
-            border-right-style: solid;
-            border-color: black;
-            border-width: 1px;
-            width: 15%;
+            @include tabletitle;
             display: table-cell;
+            &:first-child {
+                border-left-width: 0;
+            }
         }
 
         div.divtablecvbody {
@@ -53,24 +77,20 @@ div.divbox {
         }
     }
     div.divtable {
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        width: 170mm;
+        @include tablerow;
         display: flex;
-        align-items: center;
+        &:first-child {
+            border-top-width: 1px;
+        }
 
         div.divtabletitle {
-            margin: 0;
-            padding: 1em;
-            border-right-style: solid;
-            border-color: black;
-            border-width: 1px;
-            width: 15%;
+            @include tabletitle;
             display: block;
-            word-wrap: normal;
             flex-basis: 5%;
             flex-grow: 1;
+            &:first-child {
+                border-left-width: 0;
+            }
         }
 
         div.divtablebody {
