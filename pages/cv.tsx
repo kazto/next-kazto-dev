@@ -1,5 +1,3 @@
-import CvTable from '../components/CvTable'
-
 const CurriculumVitaePage = ({ data }) => {
     let i;
     const contents = [
@@ -12,7 +10,7 @@ const CurriculumVitaePage = ({ data }) => {
 
     for (i in contents){
         listBase.push(
-        <div className="divtable">
+        <div className="divtable" key={i.toString()}>
             <div className="divtabletitle">{contents[i].value}</div>
             <div className="divtablebody">{data[contents[i].ckey]}</div>
         </div>
@@ -20,9 +18,10 @@ const CurriculumVitaePage = ({ data }) => {
     }
 
     let listCV = [];
-    for(i in data.carriculum_vitae) {
+    for(let n in data.carriculum_vitae) {
+        let i = data.carriculum_vitae.length - n - 1
         listCV.push(
-            <div className="divcvtable">
+            <div className="divcvtable" key={i.toString()}>
                 <div className="divcvtablerow">
                     <div className="divtablecvtitle">自</div>
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['from_date']}</div>
@@ -36,12 +35,14 @@ const CurriculumVitaePage = ({ data }) => {
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['title']}</div>
                     <div className="divtablecvtitle">役割</div>
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['role']}</div>
+                </div>
+                <div className="divcvtablerow">
                     <div className="divtablecvtitle">技能</div>
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['skill']}</div>
                     <div className="divtablecvtitle">チーム</div>
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['team']}</div>
                 </div>
-                <div className="divtablerow">
+                <div className="divcvtablerow">
                     <div className="divtablecvtitle">詳細</div>
                     <div className="divtablecvbody">{data.carriculum_vitae[i]['description']}</div>
                 </div>
@@ -50,11 +51,13 @@ const CurriculumVitaePage = ({ data }) => {
     }
 
     return (
-        <div className="divbox">
+        <div>
             <h1 className="cvtitle">職務経歴書</h1>
-            {listBase}            
-            <h2>職務経歴</h2>
-            {listCV}
+            <div className="divbox">
+                {listBase}
+                <h2>職務経歴</h2>
+                {listCV}
+            </div>
         </div>
     )
 }
