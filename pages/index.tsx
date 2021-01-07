@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import Image from 'next/image'
 
 const IndexPage = () => (
   <Layout title="kazto.dev">
     <div style={{position: "relative", width: '720px', margin: '50px auto'}}>
-      <Image
+      <img
       src="/kazto_dev_logo.png"
       alt="kazto.dev"
       width={720}

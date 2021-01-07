@@ -1,4 +1,4 @@
-const CurriculumVitaePage = ({ data }) => {
+const CurriculumVitaePage = ({ data }:any) => {
     let i;
     const contents = [
         {"ckey": "speciality", "value": "特徴"},
@@ -19,7 +19,7 @@ const CurriculumVitaePage = ({ data }) => {
 
     let listCV = [];
     for(let n in data.carriculum_vitae) {
-        let i = data.carriculum_vitae.length - n - 1
+        let i = data.carriculum_vitae.length - Number(n) - 1
         listCV.push(
             <div className="divcvtable" key={i.toString()}>
                 <div className="divcvtablerow">
