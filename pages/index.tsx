@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const IndexPage = () => (
   <Layout title="kazto.dev">
     <div className="logobox">
-      <img className="logo" src="/kazto_dev_logo.png" alt="kazto.dev" />
+      <img className="logo" src="/kazto_dev_logo.webp" alt="kazto.dev" />
     </div>
     <div style={{ margin: "100px auto", padding: "100" }}>
       <ul className="topul">
