@@ -25,6 +25,10 @@ h1.cvtitle {
     text-align: center;
 }
 
+div.cvbox {
+    width: 210mm;
+}
+
 @mixin tablerow {
     border-style: solid;
     border-color: black;
@@ -88,6 +92,7 @@ div.divbox {
             display: block;
             flex-basis: 5%;
             flex-grow: 1;
+            border-right-width: 0;
             &:first-child {
                 border-left-width: 0;
             }
@@ -99,6 +104,11 @@ div.divbox {
             width: 85%;
             flex-basis: 5%;
             flex-grow: 19;
+            border-style: solid;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-right-width: 0;
+            border-left-width: 1px;
         }
     }
 }
