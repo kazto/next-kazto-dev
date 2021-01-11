@@ -20,6 +20,12 @@ ul.topul {
     }
 }
 
+div.logobox {
+    position: relative;
+    width: 720px;
+    margin: 50px auto;
+}
+
 h1.cvtitle {
     letter-spacing: 2em;
     text-align: center;
@@ -127,6 +133,19 @@ div.divbox {
         background-position: right top;
     }
     img.logo {
+        width: 98vw;
+        height: auto;
+    }
+    ul.topul {
+        width: 90%;
+        li {
+            float: left;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    div.logobox {
         width: 100%;
+        height: auto;
     }
 }
