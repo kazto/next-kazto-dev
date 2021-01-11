@@ -3,8 +3,8 @@ import Layout from "../components/Layout";
 
 const IndexPage = () => (
   <Layout title="kazto.dev">
-    <div style={{ position: "relative", width: "720px", margin: "50px auto" }}>
-      <img src="/kazto_dev_logo.png" alt="kazto.dev" width={720} height={323} />
+    <div className="logobox">
+      <img className="logo" src="/kazto_dev_logo.png" alt="kazto.dev" />
     </div>
     <div style={{ margin: "100px auto", padding: "100" }}>
       <ul className="topul">
