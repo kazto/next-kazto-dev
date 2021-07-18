@@ -1,3 +1,4 @@
 module.exports = {
-  images: {}
+  images: {},
+  trailingSlash: true
 }

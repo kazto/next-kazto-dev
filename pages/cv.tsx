@@ -80,7 +80,7 @@ const CurriculumVitaePage = ({ data }: any) => {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "https://raw.githubusercontent.com/kazto/carriculum-vitae/master/carriculum-vitae.json"
+    "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
   const data = await res.json();
   return {

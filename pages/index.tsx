@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
+import Link from "next/link"
+import Layout from "../components/Layout"
 
 const IndexPage = () => (
   <Layout title="kazto.dev">
@@ -9,17 +9,17 @@ const IndexPage = () => (
     <div style={{ margin: "100px auto", padding: "100" }}>
       <ul className="topul">
         <li>
-          <Link href="/about">
+          <Link href="/about" >
             <a>About</a>
           </Link>
         </li>
         <li>
           <Link href="/cv">
-            <a>Cariculum Vitae</a>
+            <a>Curriculum Vitae</a>
           </Link>
         </li>
         <li>
-          <a href="https://twitter.com/bainarian">Twitter</a>
+          <a href="https://twitter.com/kazto_dev">Twitter</a>
         </li>
         <li>
           <a href="https://github.com/kazto">GitHub</a>
@@ -35,6 +35,9 @@ const IndexPage = () => (
         </li>
         <li>
           <a href="https://www.linkedin.com/in/kazto/">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://note.com/kazto_dev">Note.com</a>
         </li>
         <li>
           <a href="https://teratail.com/users/kazto">Teratail</a>
