@@ -4,7 +4,15 @@
     "rewrites": [
       {
         "source": "**/**",
-        "function": "nextjs-server"
+        "function": "next"
+      },
+      {
+        "source": "/about",
+        "destination": "/about"
+      },
+      {
+        "source": "/cv",
+        "destination": "/cv"
       }
     ]
   },
