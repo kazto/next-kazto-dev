@@ -7,6 +7,8 @@ const CurriculumVitaePage = ({ data }: any) => {
     { ckey: "region_of_interest", value: "興味分野" },
   ];
   const listBase = [];
+  const d = new Date();
+  const build_date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
 
   for (i in contents) {
     listBase.push(
@@ -69,6 +71,7 @@ const CurriculumVitaePage = ({ data }: any) => {
   return (
     <div className="cvbox">
       <h1 className="cvtitle">職務経歴書</h1>
+      <div className="cvsignature">更新日： {build_date}<br />髙橋 和人</div>
       <div className="divbox">
         {listBase}
         <h2>職務経歴</h2>
