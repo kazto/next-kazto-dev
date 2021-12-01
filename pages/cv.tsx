@@ -25,6 +25,12 @@ const CurriculumVitaePage = ({ data }: any) => {
     listCV.push(
       <div className="divcvtable" key={i.toString()}>
         <div className="divcvtablerow">
+          <div className="divtablecvtitle">所属</div>
+          <div className="divtablecvbody">
+            {data.carriculum_vitae[i]["belongs_to"]}
+          </div>
+        </div>
+        <div className="divcvtablerow">
           <div className="divtablecvtitle">自</div>
           <div className="divtablecvbody">
             {data.carriculum_vitae[i]["from_date"]}
