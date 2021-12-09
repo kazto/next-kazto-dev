@@ -13,6 +13,10 @@
       {
         "source": "/cv",
         "destination": "/cv"
+      },
+      {
+        "source": "/adjust-schedule",
+        "destination": "/adjust-schedule"
       }
     ]
   },

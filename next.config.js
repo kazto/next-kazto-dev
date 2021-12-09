@@ -1,3 +1,5 @@
+const { redirect } = require("next/dist/next-server/server/api-utils")
+
 module.exports = {
   images: {},
   trailingSlash: true,
@@ -5,7 +7,16 @@ module.exports = {
     return {
       '/': { page: '/'},
       '/about': { page: '/about'},
-      '/cv': { page: '/cv'}
+      '/cv': { page: '/cv'},
     }
+  },
+  redirects: async function() {
+    return [
+      {
+        source: '/adjust-schedule',
+        destination: process.env.ADJUST_SCHEDULE_URL || '/',
+        permanent: true,
+      },
+    ]
   }
 }
