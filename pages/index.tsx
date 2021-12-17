@@ -22,6 +22,12 @@ const IndexPage = () => (
           <a href="https://twitter.com/kazto_dev">Twitter</a>
         </li>
         <li>
+          <a href="https://lapras.com/public/kazto_dev">Lapras</a>
+        </li>
+        <li>
+          <a href="https://youtrust.jp/users/kazto">YOUTRUST</a>
+        </li>
+        <li>
           <a href="https://github.com/kazto">GitHub</a>
         </li>
         <li>

@@ -13,7 +13,7 @@ module.exports = {
   redirects: async function() {
     return [
       {
-        source: '/adjust-schedule',
+        source: '/spir',
         destination: process.env.ADJUST_SCHEDULE_URL || '/',
         permanent: true,
       },
