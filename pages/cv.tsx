@@ -87,7 +87,7 @@ const CurriculumVitaePage = ({ data }: any) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
