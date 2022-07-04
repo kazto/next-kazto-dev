@@ -108,7 +108,7 @@ export async function getServerSideProps() {
     "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
   const data = await res.json();
-
+  /*
   const resApi = await fetch(
     "https://api.github.com/repos/kazto/curriculum-vitae/branches/master"
   );
@@ -116,6 +116,8 @@ export async function getServerSideProps() {
   const build_date = dataApi["commit"]["commit"]["author"]["date"]
     .replace(/T.*$/, "")
     .replaceAll("-", "/");
+  */
+  const build_date = "2022/07/03";
 
   return {
     props: {

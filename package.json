@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "eslint pages/index.tsx pages/cv.tsx",
     "lint:fix": "eslint --fix pages/index.tsx pages/cv.tsx",
-    "tsc": "tsc",
-    "export": "yarn run build && next export"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.12.0",
