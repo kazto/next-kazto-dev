@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from "next/link";
+import Layout from "../components/Layout";
 
 const AboutPage = () => (
   <Layout title="About">
@@ -27,17 +27,32 @@ const AboutPage = () => (
     </ul>
     <hr />
     <p>仕事とは、いつも困難が降りかかり、つらく、きびしいものです。</p>
-    <p>しかし、仕事が我が事であるかぎり、それは乗り越えるべき壁であると考えています。</p>
-    <p>一方で、つらさ、きびしさに打ち負けてしまう方も数多くいらっしゃいます。</p>
-    <p>少しでも、仕事が『おもしろい』ものであると感じることができる方を増やしたいという想いで勤めています。</p>
+    <p>
+      しかし、仕事が我が事であるかぎり、それは乗り越えるべき壁であると考えています。
+    </p>
+    <p>
+      一方で、つらさ、きびしさに打ち負けてしまう方も数多くいらっしゃいます。
+    </p>
+    <p>
+      少しでも、仕事が『おもしろい』ものであると感じることができる方を増やしたいという想いで勤めています。
+    </p>
     <p>
       <Link href="/">
         <a>return home</a>
       </Link>
     </p>
 
-    <span>Photo by <a href="https://unsplash.com/@ielix?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Elia Clerici</a> on <a href="https://unsplash.com/@kazto/likes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    <span>
+      Photo by{" "}
+      <a href="https://unsplash.com/@ielix?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        Elia Clerici
+      </a>{" "}
+      on{" "}
+      <a href="https://unsplash.com/@kazto/likes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        Unsplash
+      </a>
+    </span>
   </Layout>
-)
+);
 
-export default AboutPage
+export default AboutPage;

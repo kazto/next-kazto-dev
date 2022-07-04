@@ -1,5 +1,5 @@
-import Link from "next/link"
-import Layout from "../components/Layout"
+import Link from "next/link";
+import Layout from "../components/Layout";
 
 const IndexPage = () => (
   <Layout title="kazto.dev">
@@ -9,7 +9,7 @@ const IndexPage = () => (
     <div style={{ margin: "100px auto", padding: "100" }}>
       <ul className="topul">
         <li>
-          <Link href="/about" >
+          <Link href="/about">
             <a>About</a>
           </Link>
         </li>

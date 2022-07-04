@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CurriculumVitaePage = ({ data, build_date }: any) => {
   let i;
   const contents = [
@@ -19,23 +17,24 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
     );
   }
 
-  const getPeriod = (fromdate: String) : Number => {
-    const year = Number(fromdate.replace(/年.*$/, ''));
-    const month = Number(fromdate.replace(/.*年/, '').replace('月', ''));
+  const getPeriod = (fromdate: string): number => {
+    const year = Number(fromdate.replace(/年.*$/, ""));
+    const month = Number(fromdate.replace(/.*年/, "").replace("月", ""));
     const f = new Date(year, month - 1, 1);
     const t = new Date();
     const diffdate = t.getTime() - f.getTime();
     const diff = new Date(diffdate);
     const diffMonth = diff.getMonth();
     return diffMonth;
-  }
+  };
 
   const listCV = [];
   for (const n in data.carriculum_vitae) {
     const i = data.carriculum_vitae.length - Number(n) - 1;
-    const period = data.carriculum_vitae[i]["to_date"] == "現在" ?
-      String(getPeriod(data.carriculum_vitae[i]["from_date"])) + 'ヶ月' :
-      data.carriculum_vitae[i]["period"];
+    const period =
+      data.carriculum_vitae[i]["to_date"] == "現在"
+        ? String(getPeriod(data.carriculum_vitae[i]["from_date"])) + "ヶ月"
+        : data.carriculum_vitae[i]["period"];
 
     listCV.push(
       <div className="divcvtable" key={i.toString()}>
@@ -55,9 +54,7 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
             {data.carriculum_vitae[i]["to_date"]}
           </div>
           <div className="divtablecvtitle">期間</div>
-          <div className="divtablecvbody">
-            {period}
-          </div>
+          <div className="divtablecvbody">{period}</div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">概要</div>
@@ -92,7 +89,11 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
   return (
     <div className="cvbox">
       <h1 className="cvtitle">職務経歴書</h1>
-      <div className="cvsignature">更新日： {build_date}<br />髙橋 和人</div>
+      <div className="cvsignature">
+        更新日： {build_date}
+        <br />
+        髙橋 和人
+      </div>
       <div className="divbox">
         {listBase}
         <h2>職務経歴</h2>
@@ -112,7 +113,9 @@ export async function getServerSideProps() {
     "https://api.github.com/repos/kazto/curriculum-vitae/branches/master"
   );
   const dataApi = await resApi.json();
-  const build_date = dataApi["commit"]["commit"]["author"]["date"].replace(/T.*$/, '').replaceAll('-', '/')
+  const build_date = dataApi["commit"]["commit"]["author"]["date"]
+    .replace(/T.*$/, "")
+    .replaceAll("-", "/");
 
   return {
     props: {
