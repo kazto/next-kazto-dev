@@ -104,20 +104,22 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
 };
 
 export async function getServerSideProps() {
+  console.log("fetch start");
   const res = await fetch(
     "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
   const data = await res.json();
-  /*
+  console.log(data.carriculum_vitae[0]["belongs_to"]);
   const resApi = await fetch(
     "https://api.github.com/repos/kazto/curriculum-vitae/branches/master"
   );
   const dataApi = await resApi.json();
   const build_date = dataApi["commit"]["commit"]["author"]["date"]
     .replace(/T.*$/, "")
-    .replaceAll("-", "/");
-  */
-  const build_date = "2022/07/03";
+    .replace("-", "/")
+    .replace("-", "/");
+
+  console.log(build_date);
 
   return {
     props: {
