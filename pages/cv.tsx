@@ -1,4 +1,6 @@
-const CurriculumVitaePage = ({ data }: any) => {
+import React from 'react';
+
+const CurriculumVitaePage = ({ data, build_date }: any) => {
   let i;
   const contents = [
     { ckey: "speciality", value: "特徴" },
@@ -7,8 +9,6 @@ const CurriculumVitaePage = ({ data }: any) => {
     { ckey: "region_of_interest", value: "興味分野" },
   ];
   const listBase = [];
-  const d = new Date();
-  const build_date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
 
   for (i in contents) {
     listBase.push(
@@ -19,9 +19,24 @@ const CurriculumVitaePage = ({ data }: any) => {
     );
   }
 
+  const getPeriod = (fromdate: String) : Number => {
+    const year = Number(fromdate.replace(/年.*$/, ''));
+    const month = Number(fromdate.replace(/.*年/, '').replace('月', ''));
+    const f = new Date(year, month - 1, 1);
+    const t = new Date();
+    const diffdate = t.getTime() - f.getTime();
+    const diff = new Date(diffdate);
+    const diffMonth = diff.getMonth();
+    return diffMonth;
+  }
+
   const listCV = [];
   for (const n in data.carriculum_vitae) {
     const i = data.carriculum_vitae.length - Number(n) - 1;
+    const period = data.carriculum_vitae[i]["to_date"] == "現在" ?
+      String(getPeriod(data.carriculum_vitae[i]["from_date"])) + 'ヶ月' :
+      data.carriculum_vitae[i]["period"];
+
     listCV.push(
       <div className="divcvtable" key={i.toString()}>
         <div className="divcvtablerow">
@@ -41,7 +56,7 @@ const CurriculumVitaePage = ({ data }: any) => {
           </div>
           <div className="divtablecvtitle">期間</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["period"]}
+            {period}
           </div>
         </div>
         <div className="divcvtablerow">
@@ -92,9 +107,17 @@ export async function getServerSideProps() {
     "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
   const data = await res.json();
+
+  const resApi = await fetch(
+    "https://api.github.com/repos/kazto/curriculum-vitae/branches/master"
+  );
+  const dataApi = await resApi.json();
+  const build_date = dataApi["commit"]["commit"]["author"]["date"].replace(/T.*$/, '').replaceAll('-', '/')
+
   return {
     props: {
       data,
+      build_date,
     },
   };
 }
