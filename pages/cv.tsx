@@ -1,10 +1,12 @@
-const CurriculumVitaePage = ({ data, build_date }: any) => {
+import { CurriculumVitaeData, CurriculumVitaeProps, KVPair, ServerSideProps } from "../interfaces";
+
+const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
   let i;
-  const contents = [
-    { ckey: "speciality", value: "特徴" },
-    { ckey: "skill", value: "技術" },
-    { ckey: "self_recommend", value: "自己分析" },
-    { ckey: "region_of_interest", value: "興味分野" },
+  const contents: Array<KVPair> = [
+    { ckey: "speciality" as keyof CurriculumVitaeData, value: "特徴" },
+    { ckey: "skill" as keyof CurriculumVitaeData, value: "技術" },
+    { ckey: "self_recommend" as keyof CurriculumVitaeData, value: "自己分析" },
+    { ckey: "region_of_interest" as keyof CurriculumVitaeData, value: "興味分野" },
   ];
   const listBase = [];
 
@@ -12,7 +14,7 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
     listBase.push(
       <div className="divtable" key={i.toString()}>
         <div className="divtabletitle">{contents[i].value}</div>
-        <div className="divtablebody">{data[contents[i].ckey]}</div>
+        <div className="divtablebody">{data[contents[i].ckey] as string}</div>
       </div>
     );
   }
@@ -104,13 +106,12 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
   );
 };
 
-export async function getServerSideProps() {
-  console.log("fetch start");
+export async function getServerSideProps(): Promise<ServerSideProps> {
   const res = await fetch(
     "https://raw.githubusercontent.com/kazto/curriculum-vitae/master/curriculum-vitae.json"
   );
   const data = await res.json();
-  console.log(data.carriculum_vitae[0]["belongs_to"]);
+
   const resApi = await fetch(
     "https://api.github.com/repos/kazto/curriculum-vitae/branches/master"
   );
@@ -119,8 +120,6 @@ export async function getServerSideProps() {
     .replace(/T.*$/, "")
     .replace("-", "/")
     .replace("-", "/");
-
-  console.log(build_date);
 
   return {
     props: {

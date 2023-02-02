@@ -9,9 +9,10 @@ export type User = {
   name: string
 }
 
-export type CarricurumVitaeEntry = {
+export type CurriculumVitaeEntry = {
   from_date: string
-  to_date: string 
+  to_date: string
+  belongs_to: string
   period: string
   title: string
   role: string
@@ -20,10 +21,24 @@ export type CarricurumVitaeEntry = {
   description: Array<string>
 }
 
-export type CarricurumVitaeData = {
+export type CurriculumVitaeData = {
   speciality: string
   skill: string
   business: string
   self_recommend: Array<string>
-  carriculum_vitae: Array<CarricurumVitaeEntry>
+  curriculum_vitae: Array<CurriculumVitaeEntry>
+}
+
+export type CurriculumVitaeProps = {
+  data: CurriculumVitaeData
+  build_date: string
+}
+
+export type ServerSideProps = {
+  props: CurriculumVitaeProps
+}
+
+export type KVPair = {
+  ckey: keyof CurriculumVitaeData
+  value: string
 }

@@ -9,14 +9,10 @@ const IndexPage = () => (
     <div style={{ margin: "100px auto", padding: "100" }}>
       <ul className="topul">
         <li>
-          <Link href="/about">
-            About
-          </Link>
+          <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/cv">
-            Curriculum Vitae
-          </Link>
+          <Link href="/cv">Curriculum Vitae</Link>
         </li>
         <li>
           <a href="https://twitter.com/kazto_dev">Twitter</a>

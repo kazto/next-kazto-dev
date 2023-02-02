@@ -11,7 +11,8 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "eslint": "latest",
+    "eslint": "^8.33.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "file-loader": "latest",
     "mini-css-extract-plugin": "latest",
     "next": "latest",
@@ -29,9 +30,11 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "cross-env": "latest",
     "rimraf": "latest",
-    "typescript": "latest"
+    "typescript": "^4.9.5"
   },
   "license": "MIT"
 }
