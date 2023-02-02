@@ -1,7 +1,8 @@
-import { CurriculumVitaeData, CurriculumVitaeProps, KVPair, ServerSideProps } from "../interfaces";
+import { CurriculumVitaeData, KVPair, ServerSideProps } from "../interfaces";
 
-const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
-  let i;
+const CurriculumVitaePage = ({data, build_date}: any) => {
+  const { curriculum_vitae } = data as CurriculumVitaeData;
+
   const contents: Array<KVPair> = [
     { ckey: "speciality" as keyof CurriculumVitaeData, value: "特徴" },
     { ckey: "skill" as keyof CurriculumVitaeData, value: "技術" },
@@ -10,7 +11,7 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
   ];
   const listBase = [];
 
-  for (i in contents) {
+  for (const i in contents) {
     listBase.push(
       <div className="divtable" key={i.toString()}>
         <div className="divtabletitle">{contents[i].value}</div>
@@ -31,30 +32,28 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
     return (diffYear > 0 ? `${diffYear}年` : '') + `${diffMonth}ヶ月`;
   };
 
-  const listCV = [];
-  for (const n in data.curriculum_vitae) {
-    const i = data.curriculum_vitae.length - Number(n) - 1;
+  const listCV = curriculum_vitae.map((v, i) => {
     const period = getPeriod(
-      data.curriculum_vitae[i]["from_date"],
-      data.curriculum_vitae[i]["to_date"]
+      v["from_date"],
+      v["to_date"]
     );
 
-    listCV.push(
+    return (
       <div className="divcvtable" key={i.toString()}>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">所属</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["belongs_to"]}
+            {v["belongs_to"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">自</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["from_date"]}
+            {v["from_date"]}
           </div>
           <div className="divtablecvtitle">至</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["to_date"]}
+            {v["to_date"]}
           </div>
           <div className="divtablecvtitle">期間</div>
           <div className="divtablecvbody">{period}</div>
@@ -62,32 +61,32 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
         <div className="divcvtablerow">
           <div className="divtablecvtitle">概要</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["title"]}
+            {v["title"]}
           </div>
           <div className="divtablecvtitle">役割</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["role"]}
+            {v["role"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">技能</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["skill"]}
+            {v["skill"]}
           </div>
           <div className="divtablecvtitle">チーム</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["team"]}
+            {v["team"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">詳細</div>
           <div className="divtablecvbody">
-            {data.curriculum_vitae[i]["description"]}
+            {v["description"]}
           </div>
         </div>
       </div>
     );
-  }
+  });
 
   return (
     <div className="cvbox">
@@ -100,7 +99,7 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
       <div className="divbox">
         {listBase}
         <h2>職務経歴</h2>
-        {listCV}
+        {listCV.reverse()}
       </div>
     </div>
   );
@@ -121,12 +120,14 @@ export async function getServerSideProps(): Promise<ServerSideProps> {
     .replace("-", "/")
     .replace("-", "/");
 
-  return {
+  const props: ServerSideProps = {
     props: {
       data,
       build_date,
     },
   };
+
+  return await props;
 }
 
 export default CurriculumVitaePage;
