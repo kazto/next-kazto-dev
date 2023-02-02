@@ -38,7 +38,7 @@ const AboutPage = () => (
     </p>
     <p>
       <Link href="/">
-        <a>return home</a>
+        return home
       </Link>
     </p>
 

@@ -10,12 +10,12 @@ const IndexPage = () => (
       <ul className="topul">
         <li>
           <Link href="/about">
-            <a>About</a>
+            About
           </Link>
         </li>
         <li>
           <Link href="/cv">
-            <a>Curriculum Vitae</a>
+            Curriculum Vitae
           </Link>
         </li>
         <li>
