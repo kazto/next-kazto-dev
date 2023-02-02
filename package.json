@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "now-build": "next build",
     "start": "next start",
     "lint": "eslint pages/index.tsx pages/cv.tsx",
     "lint:fix": "eslint --fix pages/index.tsx pages/cv.tsx",

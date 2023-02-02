@@ -2,6 +2,7 @@
 
 module.exports = {
   images: {},
+  target: 'serverless',
   trailingSlash: true,
   exportPathMap: async function() {
     return {
