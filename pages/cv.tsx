@@ -32,11 +32,11 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
   };
 
   const listCV = [];
-  for (const n in data.carriculum_vitae) {
-    const i = data.carriculum_vitae.length - Number(n) - 1;
+  for (const n in data.curriculum_vitae) {
+    const i = data.curriculum_vitae.length - Number(n) - 1;
     const period = getPeriod(
-      data.carriculum_vitae[i]["from_date"],
-      data.carriculum_vitae[i]["to_date"]
+      data.curriculum_vitae[i]["from_date"],
+      data.curriculum_vitae[i]["to_date"]
     );
 
     listCV.push(
@@ -44,17 +44,17 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
         <div className="divcvtablerow">
           <div className="divtablecvtitle">所属</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["belongs_to"]}
+            {data.curriculum_vitae[i]["belongs_to"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">自</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["from_date"]}
+            {data.curriculum_vitae[i]["from_date"]}
           </div>
           <div className="divtablecvtitle">至</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["to_date"]}
+            {data.curriculum_vitae[i]["to_date"]}
           </div>
           <div className="divtablecvtitle">期間</div>
           <div className="divtablecvbody">{period}</div>
@@ -62,27 +62,27 @@ const CurriculumVitaePage = ({ data, build_date }: CurriculumVitaeProps) => {
         <div className="divcvtablerow">
           <div className="divtablecvtitle">概要</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["title"]}
+            {data.curriculum_vitae[i]["title"]}
           </div>
           <div className="divtablecvtitle">役割</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["role"]}
+            {data.curriculum_vitae[i]["role"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">技能</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["skill"]}
+            {data.curriculum_vitae[i]["skill"]}
           </div>
           <div className="divtablecvtitle">チーム</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["team"]}
+            {data.curriculum_vitae[i]["team"]}
           </div>
         </div>
         <div className="divcvtablerow">
           <div className="divtablecvtitle">詳細</div>
           <div className="divtablecvbody">
-            {data.carriculum_vitae[i]["description"]}
+            {data.curriculum_vitae[i]["description"]}
           </div>
         </div>
       </div>
