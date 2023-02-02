@@ -17,24 +17,25 @@ const CurriculumVitaePage = ({ data, build_date }: any) => {
     );
   }
 
-  const getPeriod = (fromdate: string): number => {
-    const year = Number(fromdate.replace(/年.*$/, ""));
-    const month = Number(fromdate.replace(/.*年/, "").replace("月", ""));
-    const f = new Date(year, month - 1, 1);
-    const t = new Date();
+  const getPeriod = (fromdate: string, todate: string): string => {
+    const parseYear = (d: string) => Number(d.replace(/年.*$/, ""));
+    const parseMonth = (d: string) => Number(d.replace(/.*年/, "").replace("月", "")) - 1;
+    const f = new Date(parseYear(fromdate), parseMonth(fromdate), 1);
+    const t = todate == "現在" ? new Date() : new Date(parseYear(todate), parseMonth(todate), 1);
     const diffdate = t.getTime() - f.getTime();
     const diff = new Date(diffdate);
     const diffMonth = diff.getMonth();
-    return diffMonth;
+    const diffYear = diff.getFullYear() - 1970;
+    return (diffYear > 0 ? `${diffYear}年` : '') + `${diffMonth}ヶ月`;
   };
 
   const listCV = [];
   for (const n in data.carriculum_vitae) {
     const i = data.carriculum_vitae.length - Number(n) - 1;
-    const period =
-      data.carriculum_vitae[i]["to_date"] == "現在"
-        ? String(getPeriod(data.carriculum_vitae[i]["from_date"])) + "ヶ月"
-        : data.carriculum_vitae[i]["period"];
+    const period = getPeriod(
+      data.carriculum_vitae[i]["from_date"],
+      data.carriculum_vitae[i]["to_date"]
+    );
 
     listCV.push(
       <div className="divcvtable" key={i.toString()}>
