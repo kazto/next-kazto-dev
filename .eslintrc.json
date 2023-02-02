@@ -3,11 +3,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
-  ],
-  "plugins": [
-    "@typescript-eslint"
+    "plugin:prettier/recommended"
   ],
   "env": { "node": true, "es6": true },
   "parser": "@typescript-eslint/parser",
