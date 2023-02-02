@@ -11,11 +11,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
     "eslint": "latest",
-    "eslint-config-prettier": "latest",
-    "eslint-plugin-prettier": "latest",
     "file-loader": "latest",
     "mini-css-extract-plugin": "latest",
     "next": "latest",
