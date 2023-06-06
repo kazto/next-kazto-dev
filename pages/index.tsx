@@ -30,7 +30,7 @@ const IndexPage = () => (
           <a href="https://zenn.dev/kazto">Zenn</a>
         </li>
         <li>
-          <a href="https://blog.kazto.dev/">Blog</a>
+          Blog(Under maintenance)
         </li>
         <li>
           <a href="https://www.wantedly.com/users/75211914">Wantedly</a>
