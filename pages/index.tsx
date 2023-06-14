@@ -18,6 +18,9 @@ const IndexPage = () => (
           <a href="https://twitter.com/kazto_dev">Twitter</a>
         </li>
         <li>
+          <a href="https://bsky.app/profile/kazto.dev">Bluesky</a>
+        </li>
+        <li>
           <a href="https://lapras.com/public/kazto_dev">Lapras</a>
         </li>
         <li>
