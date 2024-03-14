@@ -5,7 +5,7 @@ import { CVBody, getPeriod } from "../components/CVBody";
 const CurriculumVitaePage = ({data, build_date}: CurriculumVitaeProps) => {
   const { curriculum_vitae } = data as CurriculumVitaeData;
 
-  const listBase = CVHeader(data);
+  const listBase = CVHeader({data, build_date});
   const listCV = CVBody(curriculum_vitae.map((v) => {
     return {
       ...v,

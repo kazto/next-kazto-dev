@@ -1,6 +1,6 @@
-import { CurriculumVitaeData, KVPair } from "../interfaces";
+import { CurriculumVitaeData, CurriculumVitaeProps, KVPair } from "../interfaces";
 
-export const CVHeader = ({data}: any) => {
+export const CVHeader = ({data}: CurriculumVitaeProps) => {
     const contents: Array<KVPair> = [
         { ckey: "speciality" as keyof CurriculumVitaeData, value: "特徴" },
         { ckey: "skill" as keyof CurriculumVitaeData, value: "技術" },

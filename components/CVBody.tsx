@@ -1,4 +1,4 @@
-import { CurriculumVitaeData, CurriculumVitaeEntry } from "../interfaces";
+import { CurriculumVitaeEntry } from "../interfaces";
 
 export const getPeriod = (fromdate: string, todate: string): string => {
     const parseYear = (d: string) => Number(d.replace(/年.*$/, ""));
