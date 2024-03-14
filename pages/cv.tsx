@@ -1,6 +1,6 @@
-import { CurriculumVitaeData, KVPair, ServerSideProps } from "../interfaces";
+import { CurriculumVitaeData, KVPair, ServerSideProps, CurriculumVitaeProps } from "../interfaces";
 
-const CurriculumVitaePage = ({data, build_date}: any) => {
+const CurriculumVitaePage = ({data, build_date}: CurriculumVitaeProps) => {
   const { curriculum_vitae } = data as CurriculumVitaeData;
 
   const contents: Array<KVPair> = [

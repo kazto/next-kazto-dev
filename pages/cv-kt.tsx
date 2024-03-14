@@ -1,11 +1,11 @@
-import { CurriculumVitaeData, CurriculumVitaeEntry, KVPair, ServerSideProps } from "../interfaces";
+import { CurriculumVitaeData, CurriculumVitaeEntry, KVPair, ServerSideProps, CurriculumVitaeProps } from "../interfaces";
 import React from "react";
 
 type BelongsToDictionary = {
   [key: string]: string;
 };
 
-const CurriculumVitaePage = ({data, build_date}: any): JSX.Element => {
+const CurriculumVitaePage = ({data, build_date}: CurriculumVitaeProps): JSX.Element => {
   const { curriculum_vitae } = data as CurriculumVitaeData;
 
   const contents: Array<KVPair> = [
