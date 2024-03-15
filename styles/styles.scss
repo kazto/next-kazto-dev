@@ -154,8 +154,12 @@ div.divbox {
 
 @media only screen and (orientation: portrait) {
     body {
-        background-size: 150vh, cover;
+        margin: 0;
+        overflow-x: hidden;
+        background-size: cover, cover;
         background-position: right top, right bottom;
+        background-repeat: no-repeat, no-repeat;
+        background-attachment: fixed, fixed;
     }
 }
 
@@ -163,10 +167,6 @@ div.divbox {
     body {
         background-size: 100vh, cover;
         background-position: right top;
-    }
-    img.logo {
-        width: 98vw;
-        height: auto;
     }
     ul.topul {
         width: 90%;
@@ -177,7 +177,34 @@ div.divbox {
         }
     }
     div.logobox {
-        width: 100%;
+        margin: 50px auto;
+        max-width: 95vw;
         height: auto;
+        text-align: center;
+    }
+    img.logo {
+        max-width: 90vw;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    div.linkdiv {
+        margin:auto;
+        width: 550px;
+    }
+    ul.linkul {
+        list-style: none;
+        margin: 10px;
+        text-align: center;
+        width: 90vw;
+        padding: 0;
+        li {
+            display: inline;
+            margin: 10px;
+        }
+    }
+    img.linkbutton {
+        width: 60px;
+        height: 20px;
     }
 }
