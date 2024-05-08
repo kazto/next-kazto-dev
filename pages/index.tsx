@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const IndexPage = () => {
   const links = [
@@ -21,6 +22,7 @@ const IndexPage = () => {
 
   return (
   <Layout title="kazto.dev">
+    <SpeedInsights />
     <div className="logobox">
       <img className="logo" src="/kazto_dev_logo.webp" alt="kazto.dev" />
     </div>

@@ -12,6 +12,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.10",
     "eslint": "latest",
     "eslint-plugin-prettier": "latest",
     "file-loader": "latest",
