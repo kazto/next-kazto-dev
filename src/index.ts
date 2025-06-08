@@ -1,6 +1,6 @@
-import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
+import { Hono } from 'hono'
 
 const app = new Hono()
 
@@ -17,12 +17,12 @@ app.use('/favicon-16x16.png', serveStatic({ path: './dist/assets/icons/favicon-1
 // Firebase static files
 app.use('/__/*', serveStatic({ root: './dist/public' }))
 
-// Import route handlers
-import { indexRoute } from './routes/index'
 import { aboutRoute } from './routes/about'
 import { cvRoute } from './routes/cv'
 import { cvKtRoute } from './routes/cv-kt'
 import { dotfilesRoute } from './routes/dotfiles'
+// Import route handlers
+import { indexRoute } from './routes/index'
 import { spirRoute } from './routes/spir'
 
 // Register routes
@@ -34,12 +34,12 @@ app.get('/dotfiles', dotfilesRoute)
 app.get('/spir', spirRoute)
 
 const port = 3000
-const hostname = '0.0.0.0'
+const hostname = 'localhost'
 
 console.log(`Server is running on http://${hostname}:${port}`)
 
 serve({
-  fetch: app.fetch,
-  port,
-  hostname
+    fetch: app.fetch,
+    port,
+    hostname,
 })

@@ -1,10 +1,10 @@
-import { renderToString } from 'react-dom/server'
 import type { FC } from 'react'
+import { renderToString } from 'react-dom/server'
 
-export const renderPage = (Component: FC<any>, props: any = {}, title: string = "kazto.dev") => {
-  const html = renderToString(<Component {...props} />)
-  
-  return `<!DOCTYPE html>
+export const renderPage = (Component: FC<any>, props: any = {}, title = 'kazto.dev') => {
+    const html = renderToString(<Component {...props} />)
+
+    return `<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">

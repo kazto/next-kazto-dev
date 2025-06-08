@@ -1,34 +1,28 @@
 {
-  "hosting": {
-    "public": "out",
-    "rewrites": [
-      {
-        "source": "**/**",
-        "function": "next"
-      },
-      {
-        "source": "/about",
-        "destination": "/about"
-      },
-      {
-        "source": "/cv",
-        "destination": "/cv"
-      },
-      {
-        "source": "/adjust-schedule",
-        "destination": "/adjust-schedule"
-      }
-    ]
-  },
-  "functions": {
-    "runtime": "nodejs14",
-    "source": ".",
-    "ignore": [
-      ".firebase/**",
-      ".firebaserc",
-      "firebase.json",
-      "**/node_modules/**",
-      "**/public/**"
-    ]
-  }
+    "hosting": {
+        "public": "out",
+        "rewrites": [
+            {
+                "source": "**/**",
+                "function": "next"
+            },
+            {
+                "source": "/about",
+                "destination": "/about"
+            },
+            {
+                "source": "/cv",
+                "destination": "/cv"
+            },
+            {
+                "source": "/adjust-schedule",
+                "destination": "/adjust-schedule"
+            }
+        ]
+    },
+    "functions": {
+        "runtime": "nodejs14",
+        "source": ".",
+        "ignore": [".firebase/**", ".firebaserc", "firebase.json", "**/node_modules/**", "**/public/**"]
+    }
 }
