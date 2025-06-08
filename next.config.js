@@ -17,6 +17,11 @@ module.exports = {
         destination: process.env.ADJUST_SCHEDULE_URL || '/',
         permanent: true,
       },
+      {
+        source: '/dotfiles',
+        destination: process.env.DOTFILES_INSTALL_SH_URL || '/',
+        permanent: true,
+      }
     ]
   }
 }
